@@ -104,7 +104,7 @@ function App() {
                     placeholder="Add or edit task here..."
                   />
                 </div>
-                <Button type="submit">
+                <Button type="submit" className="btn-prim">
                 <i className="fa-solid fa-plus"></i>
                   </Button>
               </form>
