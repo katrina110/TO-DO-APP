@@ -1,0 +1,338 @@
+header {
+  padding: 20px 30px;
+  width: 100%;
+  background-image: linear-gradient(90deg, #5e1b89, #f4512c);
+}
+
+.logo {
+  width: 10rem;
+}
+
+.profile {
+  width: 41.1px;
+  height: 41.8px;
+  right: 14.9px;
+  position: absolute;
+}
+
+.center-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bg_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bg {
+  width: 1200px;
+  height: 700px;
+  background: rgba(94, 27, 137, 0.9);
+  display: flex;
+  flex-direction: column;
+  height: 700px; /* Adjust based on your header/footer height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 2rem;
+  border: 1px solid #ddd; /* Optional border for visual separation */
+  border-radius: 5px;
+  overflow-x: scroll;
+}
+
+.roboto-slab {
+  font-family: "Roboto Slab", sans-serif;
+  color: gray;
+  margin: 20px;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.apptitle {
+  font-size: 2rem;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.taskInput {
+  height: 3rem;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+/* Ensure the task list can grow and shrink */
+.taskList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #9D71BC;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem; /* Space between action buttons */
+}
+
+.task-text {
+  color: #F8FFFE;
+}
+
+.allbutt {
+  margin: 20px;
+  margin-right: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.form-row {
+  width: 100%;
+}
+
+.task-text {
+  margin-left: 10px;
+}
+
+.submit-btn {
+  margin: 5px;
+  margin-left: 0;
+  float: right;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #FF7F4D;
+  border-color: #FF7F4D;
+}
+header {
+  padding: 20px 30px;
+  width: 100%;
+  background-image: linear-gradient(90deg, #5e1b89, #f4512c);
+}
+
+.logo {
+  width: 10rem;
+}
+
+.profile {
+  width: 41.1px;
+  height: 41.8px;
+  right: 14.9px;
+  position: absolute;
+}
+
+.center-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bg_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bg {
+  width: 1200px;
+  height: 700px;
+  background: rgba(94, 27, 137, 0.9);
+  display: flex;
+  flex-direction: column;
+  height: 700px; /* Adjust based on your header/footer height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 2rem;
+  border: 1px solid #ddd; /* Optional border for visual separation */
+  border-radius: 5px;
+  overflow-x: scroll;
+}
+
+.roboto-slab {
+  font-family: "Roboto Slab", sans-serif;
+  color: gray;
+  margin: 20px;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.apptitle {
+  font-size: 2rem;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.taskInput {
+  height: 3rem;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+/* Ensure the task list can grow and shrink */
+.taskList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #9D71BC;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem; /* Space between action buttons */
+}
+
+.task-text {
+  color: #F8FFFE;
+}
+
+.allbutt {
+  margin: 20px;
+  margin-right: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.form-row {
+  width: 100%;
+}
+
+.task-text {
+  margin-left: 10px;
+}
+
+.submit-btn {
+  margin: 5px;
+  margin-left: 0;
+  float: right;
+}
+
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  user-select: none;
+}
+
+
+input[type="checkbox"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  background-color: transparent;
+  border-radius: 3px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #FF7F4D;
+  border-color: #FF7F4D;
+}
+
+
+input[type="checkbox"]:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
