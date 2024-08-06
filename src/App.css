@@ -336,3 +336,18 @@ input[type="checkbox"]:checked + label:after {
   border: solid #fff;
   border-width: 0 2px 2px 0;
 }
+.btn-prim{
+  --bs-btn-color: #F8FFFE;
+  --bs-btn-bg: #F4512C;
+  --bs-btn-border-color: #9D71BC;
+  --bs-btn-hover-color: #F8FFFE;
+  --bs-btn-hover-bg: #9D71BC;
+  --bs-btn-hover-border-color: #FF7F4D;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #F8FFFE;
+  --bs-btn-active-bg: #FF7F4D;
+  --bs-btn-active-border-color: #FF7F4D;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #F8FFFE;
+  --bs-btn-disabled-bg: #FF7F4D
+}
