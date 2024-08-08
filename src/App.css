@@ -299,3 +299,6 @@ input[type="checkbox"]:checked {
 .react-calendar__tile--now {
   background: #9D71BC !important;
 }
+.react-datetime-picker {
+  color: #9D71BC !important;
+}
