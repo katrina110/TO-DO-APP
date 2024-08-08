@@ -229,7 +229,7 @@ input[type="checkbox"]:checked {
   margin-bottom: 10px;
   height: 40px;
   margin-left: 10px;
-  color: darkgrey;
+  color:  #F4512C !important;
 }
 
 .react-datetime-picker__wrapper{
@@ -258,7 +258,7 @@ input[type="checkbox"]:checked {
 
 .react-datetime-picker__calendar-button__icon,
 .react-datetime-picker__button__icon {
-  stroke: lightgray !important;  
+  stroke:  #F4512C !important;
 }
 
 .btn-primary {
