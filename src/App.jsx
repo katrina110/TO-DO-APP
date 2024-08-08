@@ -165,7 +165,7 @@ function App() {
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>{editingTaskId ? "Edit Task" : "Add Task"}</Modal.Title>
+          <Modal.Title className="roboto-slab">{editingTaskId ? "Edit Task" : "Add Task"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit} className="modal-form">

@@ -46,7 +46,7 @@ header {
 
 .roboto-slab {
   font-family: "Roboto Slab", sans-serif;
-  color: gray;
+  color: #5E1B89;
   margin: 20px;
 }
 
@@ -75,6 +75,16 @@ main {
 .taskInput {
   height: 3rem;
   width: 800px;
+  border: 2px solid #FF7F4D;
+}
+
+.taskInput:hover {
+  outline: none !important;
+}
+
+.taskInput:focus {
+  outline: none !important;
+  
 }
 
 ul {
@@ -110,7 +120,7 @@ ul {
 
 .task-actions {
   display: flex;
-  gap: 0.5rem; /* Space between action buttons */
+  gap: 0.5rem; 
 }
 
 .task-text {
@@ -226,8 +236,8 @@ input[type="checkbox"]:checked {
   display: flex;
   flex-grow: 1;
   flex-shrink: 0;
-  border: thin solid gray;
-  height: 45px
+  border: thin solid #FF7F4D !important;
+  height: 48px
   
     
 }
@@ -248,9 +258,44 @@ input[type="checkbox"]:checked {
 
 .react-datetime-picker__calendar-button__icon,
 .react-datetime-picker__button__icon {
-  stroke: lightgray !important;  // Override the stroke color to white
+  stroke: lightgray !important;  
 }
 
-.modal-title h4{
-  color: #5e1b89;
+.btn-primary {
+  background-image: linear-gradient(90deg, #5e1b89, #f4512c);
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: var(--bs-modal-title-line-height);
+  color: #5E1B89 !important;
+}
+
+.react-clock__face {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid #5E1B89 !important;
+  border-radius: 50%;
+}
+.react-clock__hand__body {
+  position: absolute;
+  background-color: #f4512c !important;
+  transform: translateX(-50%);
+}
+.react-clock__mark__body {
+  position: absolute;
+  background-color: #5E1B89  !important;
+  transform: translateX(-50%);
+}
+
+.react-calendar__tile--active {
+  background:  linear-gradient(90deg, #5e1b89, #f4512c) !important;
+  color: white;
+}
+
+.react-calendar__tile--now {
+  background: #9D71BC !important;
 }
