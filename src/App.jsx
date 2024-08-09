@@ -4,8 +4,9 @@ import DateTimePicker from "react-datetime-picker";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datetime-picker/dist/DateTimePicker.css";
-import 'react-calendar/dist/Calendar.css';
-import 'react-clock/dist/Clock.css';
+import "react-calendar/dist/Calendar.css";
+import "react-clock/dist/Clock.css";
+import ConfirmationModal from "./ConfirmationModal";
 
 function App() {
   const [newTask, setNewTask] = useState("");
@@ -18,10 +19,12 @@ function App() {
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [allMarkedDone, setAllMarkedDone] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState(null);
 
   useEffect(() => {
     localStorage.setItem("TASK", JSON.stringify(todos));
-    setAllMarkedDone(todos.length > 0 && todos.every(todo => todo.completed));
+    setAllMarkedDone(todos.length > 0 && todos.every((todo) => todo.completed));
   }, [todos]);
 
   function handleSubmit(e) {
@@ -31,7 +34,9 @@ function App() {
       // Update the existing task
       setTodos((currentTodos) =>
         currentTodos.map((todo) =>
-          todo.id === editingTaskId ? { ...todo, title: newTask, deadline: taskDeadline } : todo
+          todo.id === editingTaskId
+            ? { ...todo, title: newTask, deadline: taskDeadline }
+            : todo
         )
       );
       setEditingTaskId(null);
@@ -39,7 +44,12 @@ function App() {
       // Add a new task
       setTodos((currentTodos) => [
         ...currentTodos,
-        { id: crypto.randomUUID(), title: newTask, completed: false, deadline: taskDeadline },
+        {
+          id: crypto.randomUUID(),
+          title: newTask,
+          completed: false,
+          deadline: taskDeadline,
+        },
       ]);
     }
     setNewTask("");
@@ -55,13 +65,11 @@ function App() {
     );
   }
 
-  function deleteTodo(id) {
-    setTodos((currentTodos) =>
-      currentTodos.filter((todo) => todo.id !== id)
-    );
+  function deleteTodoConfirmed(id) {
+    setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== id));
   }
 
-  function deleteAllTodos() {
+  function deleteAllTodosConfirmed() {
     setTodos([]);
   }
 
@@ -85,6 +93,25 @@ function App() {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
+  }
+
+  function handleDeleteClick(id) {
+    setTaskToDelete(id);
+    setShowConfirmModal(true);
+  }
+
+  function handleDeleteAllClick() {
+    setTaskToDelete(null);
+    setShowConfirmModal(true);
+  }
+
+  function handleConfirmDelete() {
+    if (taskToDelete) {
+      deleteTodoConfirmed(taskToDelete);
+    } else {
+      deleteAllTodosConfirmed();
+    }
+    setShowConfirmModal(false);
   }
 
   return (
@@ -115,17 +142,17 @@ function App() {
                     value={taskDeadline}
                   />
                 </div>
-                <div className="form-row">
-
-                </div>
+                <div className="form-row"></div>
                 <Button type="submit" className="submit-btn">
                   <i className="fa-solid fa-plus"></i>
                 </Button>
               </form>
             </div>
             <div className="allbutt">
-              <Button onClick={deleteAllTodos}>Delete All</Button>
-              <Button onClick={toggleAllTodos}>{allMarkedDone ? "Mark All Undone" : "Mark All Done"}</Button>
+              <Button onClick={handleDeleteAllClick}>Delete All</Button>
+              <Button onClick={toggleAllTodos}>
+                {allMarkedDone ? "Mark All Undone" : "Mark All Done"}
+              </Button>
             </div>
             <ul className="taskList">
               {todos.map((todo) => (
@@ -138,21 +165,31 @@ function App() {
                       onChange={() => toggleTaskStatus(todo.id)}
                     />
                     <label htmlFor={`checkbox-${todo.id}`}></label>
-                    <span className={`task-text ${todo.completed ? "completed" : ""}`}>
+                    <span
+                      className={`task-text ${
+                        todo.completed ? "completed" : ""
+                      }`}
+                    >
                       {todo.title}
                     </span>
                     <span className="task-date">
-                      {new Date(todo.deadline).toLocaleString()}
+                      {todo.deadline
+                        ? new Date(todo.deadline).toLocaleString()
+                        : "No date set"}
                     </span>
                   </div>
                   <div className="task-actions">
                     <Button onClick={() => toggleTaskStatus(todo.id)}>
                       {todo.completed ? "Undone" : "Done"}
                     </Button>
-                    <Button onClick={() => startEditing(todo.id, todo.title, todo.deadline)}>
+                    <Button
+                      onClick={() =>
+                        startEditing(todo.id, todo.title, todo.deadline)
+                      }
+                    >
                       <i className="fa-regular fa-pen-to-square"></i>
                     </Button>
-                    <Button onClick={() => deleteTodo(todo.id)}>
+                    <Button onClick={() => handleDeleteClick(todo.id)}>
                       <i className="fa-regular fa-trash-can"></i>
                     </Button>
                   </div>
@@ -165,7 +202,9 @@ function App() {
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title className="roboto-slab">{editingTaskId ? "Edit Task" : "Add Task"}</Modal.Title>
+          <Modal.Title className="roboto-slab">
+            {editingTaskId ? "Edit Task" : "Add Task"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit} className="modal-form">
@@ -181,10 +220,7 @@ function App() {
               />
             </div>
             <div className="form-row">
-              <DateTimePicker
-                onChange={setTaskDeadline}
-                value={taskDeadline}
-              />
+              <DateTimePicker onChange={setTaskDeadline} value={taskDeadline} />
             </div>
             <Button type="submit" className="submit-btn">
               {editingTaskId ? "Update Task" : "Add Task"}
@@ -192,8 +228,15 @@ function App() {
           </form>
         </Modal.Body>
       </Modal>
+
+      <ConfirmationModal
+        isOpen={showConfirmModal}
+        onClose={() => setShowConfirmModal(false)}
+        onConfirm={handleConfirmDelete}
+      />
     </>
   );
 }
 
 export default App;
+
