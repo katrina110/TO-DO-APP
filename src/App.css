@@ -215,6 +215,17 @@ input[type="checkbox"]:checked + label:after {
   --bs-btn-disabled-color: #f8fffe !important;
   --bs-btn-disabled-bg: #ff7f4d !important;
 }
+
+.btn-secondary {
+  
+  --bs-btn-color: #f8fffe !important;
+  --bs-btn-bg: #f4512c !important;
+  --bs-btn-border-color: #9d71bc !important;
+  --bs-btn-hover-color: #f8fffe !important;
+  --bs-btn-hover-bg: #9d71bc !important;
+  --bs-btn-hover-border-color: #ff7f4d !important;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
+}
 input[type="checkbox"]:checked {
   background-color: #ff7f4d;
   border-color: #ff7f4d;
