@@ -243,7 +243,7 @@ input[type="checkbox"]:checked {
   display: flex;
   flex-grow: 1;
   flex-shrink: 0;
-  border: thin solid #ff7f4d !important;
+  border: thin solid #9d71bc !important;
   height: 48px;
 }
 
