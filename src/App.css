@@ -76,6 +76,7 @@ main {
   height: 3rem;
   width: 800px;
   border: 2px solid #FF7F4D;
+  color: gray;
 }
 
 .taskInput:hover {
@@ -261,9 +262,7 @@ input[type="checkbox"]:checked {
   stroke:  #F4512C !important;
 }
 
-.btn-primary {
-  background-image: linear-gradient(90deg, #5e1b89, #f4512c);
-}
+
 
 .modal-title {
   margin-bottom: 0;
@@ -302,3 +301,4 @@ input[type="checkbox"]:checked {
 .react-datetime-picker {
   color: #9D71BC !important;
 }
+
