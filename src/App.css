@@ -1,8 +1,9 @@
-
 header {
   padding: 20px 30px;
   width: 100%;
   background-image: linear-gradient(90deg, #5e1b89, #f4512c);
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -36,17 +37,17 @@ header {
   background: rgba(94, 27, 137, 0.9);
   display: flex;
   flex-direction: column;
-  height: 700px; /* Adjust based on your header/footer height */
-  overflow-y: auto; /* Enable vertical scrolling */
+  height: 700px;
+  overflow-y: auto;
   padding: 2rem;
-  border: 1px solid #ddd; /* Optional border for visual separation */
+  border: 1px solid #ddd;
   border-radius: 5px;
-  overflow-x: scroll;
+  overflow-x: none;
 }
 
 .roboto-slab {
   font-family: "Roboto Slab", sans-serif;
-  color: #5E1B89;
+  color: #5e1b89;
   margin: 20px;
 }
 
@@ -75,7 +76,7 @@ main {
 .taskInput {
   height: 3rem;
   width: 800px;
-  border: 2px solid #FF7F4D;
+  border: 2px solid #ff7f4d;
   color: gray;
 }
 
@@ -85,7 +86,6 @@ main {
 
 .taskInput:focus {
   outline: none !important;
-  
 }
 
 ul {
@@ -94,9 +94,10 @@ ul {
 
 .completed {
   text-decoration: line-through;
+  opacity: 0.6;
+  color: gray;
 }
 
-/* Ensure the task list can grow and shrink */
 .taskList {
   margin: 0;
   padding: 0;
@@ -109,7 +110,7 @@ ul {
   align-items: center;
   padding: 0.5rem 0;
   border-bottom: 1px solid #ddd;
-  background-color: #9D71BC;
+  background-color: #9d71bc;
   margin-bottom: 5px;
   padding: 5px;
 }
@@ -121,11 +122,11 @@ ul {
 
 .task-actions {
   display: flex;
-  gap: 0.5rem; 
+  gap: 0.5rem;
 }
 
 .task-text {
-  color: #F8FFFE;
+  color: #f8fffe;
 }
 
 .allbutt {
@@ -150,9 +151,7 @@ ul {
 .submit-btn {
   margin: 5px;
   margin-left: 0;
-
 }
-
 
 input[type="checkbox"] {
   position: absolute;
@@ -162,7 +161,6 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-
 input[type="checkbox"] + label {
   position: relative;
   padding-left: 25px;
@@ -171,7 +169,6 @@ input[type="checkbox"] + label {
   color: #fff;
   user-select: none;
 }
-
 
 input[type="checkbox"] + label:before {
   content: "";
@@ -187,12 +184,10 @@ input[type="checkbox"] + label:before {
   transition: background-color 0.2s, border-color 0.2s;
 }
 
-
 input[type="checkbox"]:checked + label:before {
-  background-color: #FF7F4D;
-  border-color: #FF7F4D;
+  background-color: #ff7f4d;
+  border-color: #ff7f4d;
 }
-
 
 input[type="checkbox"]:checked + label:after {
   content: "";
@@ -206,19 +201,19 @@ input[type="checkbox"]:checked + label:after {
   border-width: 0 2px 2px 0;
 }
 .btn-primary {
-  --bs-btn-color: #F8FFFE !important;
-  --bs-btn-bg: #F4512C !important;
-  --bs-btn-border-color: #9D71BC !important;
-  --bs-btn-hover-color: #F8FFFE !important;
-  --bs-btn-hover-bg: #9D71BC  !important;
-  --bs-btn-hover-border-color: #FF7F4D !important;
+  --bs-btn-color: #f8fffe !important;
+  --bs-btn-bg: #f4512c !important;
+  --bs-btn-border-color: #9d71bc !important;
+  --bs-btn-hover-color: #f8fffe !important;
+  --bs-btn-hover-bg: #9d71bc !important;
+  --bs-btn-hover-border-color: #ff7f4d !important;
   --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
-  --bs-btn-active-color: #F8FFFE !important;
-  --bs-btn-active-bg: #FF7F4D !important;
-  --bs-btn-active-border-color: #FF7F4D !important;
+  --bs-btn-active-color: #f8fffe !important;
+  --bs-btn-active-bg: #ff7f4d !important;
+  --bs-btn-active-border-color: #ff7f4d !important;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
-  --bs-btn-disabled-color: #F8FFFE !important;
-  --bs-btn-disabled-bg: #FF7F4D !important;
+  --bs-btn-disabled-color: #f8fffe !important;
+  --bs-btn-disabled-bg: #ff7f4d !important;
 }
 input[type="checkbox"]:checked {
   background-color: #ff7f4d;
@@ -230,44 +225,39 @@ input[type="checkbox"]:checked {
   margin-bottom: 10px;
   height: 40px;
   margin-left: 10px;
-  color:  #F4512C !important;
+  color: #f4512c !important;
 }
 
-.react-datetime-picker__wrapper{
+.react-datetime-picker__wrapper {
   display: flex;
   flex-grow: 1;
   flex-shrink: 0;
-  border: thin solid #FF7F4D !important;
-  height: 48px
-  
-    
+  border: thin solid #ff7f4d !important;
+  height: 48px;
 }
 
-.modal-form{
+.modal-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: center;
   align-items: center;
-
 }
 
-.task-date{
+.task-date {
   margin-left: 10px;
   color: lightgray;
 }
 
 .react-datetime-picker__calendar-button__icon,
 .react-datetime-picker__button__icon {
-  stroke:  #F4512C !important;
+  stroke: #f4512c !important;
 }
-
-
 
 .modal-title {
   margin-bottom: 0;
   line-height: var(--bs-modal-title-line-height);
-  color: #5E1B89 !important;
+  color: #5e1b89 !important;
 }
 
 .react-clock__face {
@@ -276,7 +266,7 @@ input[type="checkbox"]:checked {
   bottom: 0;
   left: 0;
   right: 0;
-  border: 1px solid #5E1B89 !important;
+  border: 1px solid #5e1b89 !important;
   border-radius: 50%;
 }
 .react-clock__hand__body {
@@ -286,19 +276,22 @@ input[type="checkbox"]:checked {
 }
 .react-clock__mark__body {
   position: absolute;
-  background-color: #5E1B89  !important;
+  background-color: #5e1b89 !important;
   transform: translateX(-50%);
 }
 
 .react-calendar__tile--active {
-  background:  linear-gradient(90deg, #5e1b89, #f4512c) !important;
+  background-color: #5e1b89 !important;
   color: white;
 }
 
 .react-calendar__tile--now {
-  background: #9D71BC !important;
+  background: #9d71bc !important;
 }
 .react-datetime-picker {
-  color: #9D71BC !important;
+  color: #9d71bc !important;
 }
 
+.react-datetime-picker__inputGroup__input {
+  color: #ff7f4d !important;
+}
